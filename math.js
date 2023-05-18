@@ -38,3 +38,40 @@ console.log({
   areaTriangulo,
 });
 console.groupEnd("Triángulos");
+
+// Código del círculo
+console.group("Círculos");
+
+// Radio
+const radioCirculo = 4;
+
+// Diámetro
+const diametroCirculo = radioCirculo * 2;
+
+// PI
+const PI = Math.PI;
+
+// Circunferencia
+const perimetroCirculo = diametroCirculo * PI;
+
+// Área
+const areaCirculo = radioCirculo ** 2 * PI;
+
+function calcularCirculo(radio) {
+  const radius = radio;
+  const diametro = radio * 2;
+  const PI = Math.PI;
+  const circunferencia = diametro * PI;
+  const area = radio ** 2 * PI;
+  return { radius, diametro, PI, circunferencia, area };
+}
+
+console.log({
+  radioCirculo,
+  diametroCirculo,
+  PI,
+  perimetroCirculo,
+  areaCirculo,
+});
+
+console.groupEnd("Círculos");
