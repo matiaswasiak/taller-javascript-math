@@ -66,6 +66,34 @@ function calcularCirculo(radio) {
   return { radius, diametro, PI, circunferencia, area };
 }
 
+// Calcular altura de un triangulo isósceles conociendo los lados iguales y la base
+function alturaTrianguloIsosceles(lado1, lado2, base) {
+  if (lado1 === lado2 && lado1 !== base) {
+    const altura = Math.sqrt(lado1 ** 2 - base ** 2 / 4);
+    return altura;
+  } else {
+    return "No es un triángulo isósceles";
+  }
+}
+
+// Calcular altura de un triangulo escaleno conociendo los lados
+function alturaTrianguloEscaleno(lado1, lado2, base) {
+  if (lado1 !== lado2 && lado1 !== base && lado2 !== base) {
+    const semiperimetro = (lado1 + lado2 + base) / 2;
+    const altura =
+      (2 / base) *
+      Math.sqrt(
+        semiperimetro *
+          (semiperimetro - lado1) *
+          (semiperimetro - lado2) *
+          (semiperimetro - base)
+      );
+    return altura;
+  } else {
+    return "No es un triángulo escaleno";
+  }
+}
+
 console.log({
   radioCirculo,
   diametroCirculo,
