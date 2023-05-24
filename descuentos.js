@@ -9,11 +9,26 @@ function calculatePriceWithDiscount() {
   const price = Number(inputPrice.value);
   const coupon = inputCoupon.value;
 
-  const coupons = {
-    hopefully_nobody_uses_this_coupon: 100,
-    who_says_no_to_a_coupon: 50,
-    yes_this_is_a_coupon: 10,
-  };
+  // const coupons = {
+  //   hopefully_nobody_uses_this_coupon: 100,
+  //   who_says_no_to_a_coupon: 50,
+  //   yes_this_is_a_coupon: 10,
+  // };
+
+  const couponsList = [
+    {
+      name: "hopefully_nobody_uses_this_coupon",
+      discount: 100,
+    },
+    {
+      name: "who_says_no_to_a_coupon",
+      discount: 50,
+    },
+    {
+      name: "yes_this_is_a_coupon",
+      discount: 10,
+    },
+  ];
 
   if (!price || !coupon) {
     result.innerText = "Debes ingresar un precio y un cupón";
@@ -54,11 +69,36 @@ function calculatePriceWithDiscount() {
   //     return;
   // }
 
-  if (coupons[coupon]) {
-    discount = coupons[coupon];
-  } else {
+  // USING OBJECT
+  // if (coupons[coupon]) {
+  //   discount = coupons[coupon];
+  // } else {
+  //   result.innerText = `El cupón ${coupon} no es válido`;
+  // }
+
+  // USING ARRAY
+  const couponFound = couponsList.find((couponObj) => {
+    return couponObj.name === coupon;
+  });
+
+  if (!couponFound) {
     result.innerText = `El cupón ${coupon} no es válido`;
+    return;
   }
+
+  discount = couponFound.discount;
+
+  // USING ARRAY WITH .FILTER
+  // const couponFound = couponsList.filter((couponObj) => {
+  //   return couponObj.name === coupon;
+  // });
+
+  // if (!couponFound.length) {
+  //   result.innerText = `El cupón ${coupon} no es válido`;
+  //   return;
+  // }
+
+  // discount = couponFound[0].discount;
 
   const newPrice = (price * (100 - discount)) / 100;
 
