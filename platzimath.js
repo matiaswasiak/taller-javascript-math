@@ -82,20 +82,6 @@ function ordenarLista(listaDesordenada) {
   return listaDesordenada.sort((a, b) => a - b);
 }
 
-// Platzi solution
-function calcularModa(lista) {
-  const listaCount = {};
-
-  for (let i = 0; i < lista.length; i++) {
-    const elemento = lista[i];
-    if (listaCount[elemento]) {
-      listaCount[elemento] += 1;
-    } else {
-      listaCount[elemento] = 1;
-    }
-  }
-}
-
 function obtenerModa(lista) {
   const listaCount = {};
 
