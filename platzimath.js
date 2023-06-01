@@ -81,3 +81,35 @@ function arrayIsEven(array) {
 function ordenarLista(listaDesordenada) {
   return listaDesordenada.sort((a, b) => a - b);
 }
+
+// Platzi solution
+function calcularModa(lista) {
+  const listaCount = {};
+
+  for (let i = 0; i < lista.length; i++) {
+    const elemento = lista[i];
+    if (listaCount[elemento]) {
+      listaCount[elemento] += 1;
+    } else {
+      listaCount[elemento] = 1;
+    }
+  }
+}
+
+function obtenerModa(lista) {
+  const listaCount = {};
+
+  lista.map((elemento) => {
+    if (listaCount[elemento]) {
+      listaCount[elemento] += 1;
+    } else {
+      listaCount[elemento] = 1;
+    }
+  });
+
+  const listaArray = Object.entries(listaCount).sort((a, b) => a[1] - b[1]);
+
+  const moda = listaArray[listaArray.length - 1];
+
+  return moda;
+}
