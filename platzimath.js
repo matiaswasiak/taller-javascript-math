@@ -19,7 +19,8 @@ function esImpar(lista) {
 //   return mediana;
 // }
 
-function calcularMediana(lista) {
+function calcularMediana(listaDesordenada) {
+  const lista = ordenarLista(listaDesordenada);
   const listaEsPar = esPar(lista);
 
   if (listaEsPar) {
@@ -59,4 +60,24 @@ function arrayIsEven(array) {
   return array.length % 2 === 0;
 }
 
-const arrayIsEvenArrow = (array) => array.length % 2 === 0;
+// const arrayIsEvenArrow = (array) => array.length % 2 === 0;
+
+// function ordenarLista(listaDesordenada) {
+//   function ordenarListaSort(valorAcumulado, nuevoValor) {
+//     if (valorAcumulado > nuevoValor) {
+//       return 1;
+//     } else if (valorAcumulado == nuevoValor) {
+//       return 0;
+//     } else {
+//       return -1;
+//     }
+//   }
+
+//   const lista = listaDesordenada.sort(ordenarListaSort);
+
+//   return lista;
+// }
+
+function ordenarLista(listaDesordenada) {
+  return listaDesordenada.sort((a, b) => a - b);
+}
