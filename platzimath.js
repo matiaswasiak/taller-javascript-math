@@ -22,14 +22,17 @@ PlatziMath.esImpar = function esImpar(lista) {
 // }
 
 PlatziMath.calcularMediana = function calcularMediana(listaDesordenada) {
-  const lista = ordenarLista(listaDesordenada);
-  const listaEsPar = esPar(lista);
+  const lista = PlatziMath.ordenarLista(listaDesordenada);
+  const listaEsPar = PlatziMath.esPar(lista);
 
   if (listaEsPar) {
     const indexMitad1ListaPar = lista.length / 2 - 1;
     const indexMitad2ListaPar = lista.length / 2;
 
-    calcularPromedio([lista[indexMitad1ListaPar], lista[indexMitad2ListaPar]]);
+    PlatziMath.calcularPromedio([
+      lista[indexMitad1ListaPar],
+      lista[indexMitad2ListaPar],
+    ]);
   } else {
     const indexMitadListaImpar = Math.floor(lista.length / 2);
     const mediana = lista[indexMitadListaImpar];
