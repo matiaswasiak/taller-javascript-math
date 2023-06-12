@@ -1,10 +1,12 @@
-function esPar(lista) {
-  return !(lista.length % 2);
-}
+const PlatziMath = {};
 
-function esImpar(lista) {
+PlatziMath.esPar = function esPar(lista) {
+  return !(lista.length % 2);
+};
+
+PlatziMath.esImpar = function esImpar(lista) {
   return lista.length % 2;
-}
+};
 
 // function calcularMediana(lista) {
 //   let mediana;
@@ -19,7 +21,7 @@ function esImpar(lista) {
 //   return mediana;
 // }
 
-function calcularMediana(listaDesordenada) {
+PlatziMath.calcularMediana = function calcularMediana(listaDesordenada) {
   const lista = ordenarLista(listaDesordenada);
   const listaEsPar = esPar(lista);
 
@@ -33,10 +35,10 @@ function calcularMediana(listaDesordenada) {
     const mediana = lista[indexMitadListaImpar];
     return mediana;
   }
-}
+};
 
 // Function that calculate the average of a list
-function calcularPromedio(array) {
+PlatziMath.calcularPromedio = function calcularPromedio(array) {
   // sumar todos los elementos del array / cantidad de elementos
   // let sumaArray = 0;
   // for (let i = 0; i < array.length; i++) {
@@ -53,12 +55,12 @@ function calcularPromedio(array) {
 
   const promedio = sumaLista / array.length;
   console.log(promedio);
-}
+};
 
 // Function that check if the array is even
-function arrayIsEven(array) {
+PlatziMath.arrayIsEven = function arrayIsEven(array) {
   return array.length % 2 === 0;
-}
+};
 
 // const arrayIsEvenArrow = (array) => array.length % 2 === 0;
 
@@ -78,11 +80,11 @@ function arrayIsEven(array) {
 //   return lista;
 // }
 
-function ordenarLista(listaDesordenada) {
+PlatziMath.ordenarLista = function ordenarLista(listaDesordenada) {
   return listaDesordenada.sort((a, b) => a - b);
-}
+};
 
-function obtenerModa(lista) {
+PlatziMath.obtenerModa = function obtenerModa(lista) {
   const listaCount = {};
 
   lista.map((elemento) => {
@@ -98,4 +100,4 @@ function obtenerModa(lista) {
   const moda = listaArray[listaArray.length - 1];
 
   return moda;
-}
+};
