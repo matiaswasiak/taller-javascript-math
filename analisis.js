@@ -92,3 +92,8 @@ function proyeccionPorEmpresa(nombre) {
     return nuevaMediana;
   }
 }
+
+// Analisis de top 10% de salarios
+function medianaGeneral() {
+  const nombres = salarios.map((persona) => persona.name);
+}
