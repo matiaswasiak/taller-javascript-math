@@ -95,5 +95,12 @@ function proyeccionPorEmpresa(nombre) {
 
 // Analisis de top 10% de salarios
 function medianaGeneral() {
-  const nombres = salarios.map((persona) => persona.name);
+  const listaMedianas = salarios.map((persona) =>
+    medianaPorPersona(persona.name)
+  );
+  console.log({ nombres });
+
+  const mediana = PlatziMath.calcularMediana(listaMedianas);
+
+  return mediana;
 }
